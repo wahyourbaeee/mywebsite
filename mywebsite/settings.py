@@ -1,6 +1,6 @@
 """
 Django settings for mywebsite project.
-Final Production Version for Railway
+FINAL GACOR VERSION - Anti Error Static Files
 """
 
 from pathlib import Path
@@ -13,11 +13,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-8y&h0k9on4^fua7)2a_jy_@8i%ufk8p2xvycqu2#jsk%lfw25u'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-# Set False kalau lo mau webnya bener-bener mode profesional (tapi True dulu buat cek error)
+# Biarkan True dulu biar kita bisa liat errornya kalau masih ada
 DEBUG = True
 
-ALLOWED_HOSTS = ['*'] 
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 INSTALLED_APPS = [
@@ -27,7 +26,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # My Apps
     'blog',
     'about',
     'contact',
@@ -37,7 +35,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware', # Handle static files di cloud
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Wajib di bawah SecurityMiddleware
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -65,8 +63,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mywebsite.wsgi.application'
 
-# Database Setup
-# Pakai SQLite di lokal, otomatis pakai Postgres di Railway via DATABASE_URL
+# Database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -74,7 +71,7 @@ DATABASES = {
     }
 }
 
-# Ambil konfigurasi database dari environment variable Railway
+# Auto-switch ke Postgres di Railway
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
 
@@ -92,19 +89,25 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Static Files (CSS, JavaScript, Images)
-STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_DIRS = [BASE_DIR / "static"]
+# --- KONFIGURASI STATIC FILES (INI BIANG KEROKNYA) ---
+STATIC_URL = '/static/'
 
-# Gunakan storage ini agar deployment lebih stabil (Anti-Error saat collectstatic)
+# Folder tempat lo naruh gambar di VS Code
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
+# Folder tempat Railway ngumpulin semua gambar (Jangan buat manual, biar sistem yang buat)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Storage WhiteNoise yang paling stabil
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
-# Media Files (Uploadan user)
+# Media Files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Keamanan Form Login (Wajib buat Railway)
+# Keamanan
 CSRF_TRUSTED_ORIGINS = [
     'https://mywebsite-production-ffce.up.railway.app',
 ]
