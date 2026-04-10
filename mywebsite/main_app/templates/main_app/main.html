@@ -29,12 +29,12 @@
       <div class="flex flex-wrap justify-center md:justify-start gap-4">
         <a
           href="#projects"
-          class="bg-slate-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-slate-800 transition shadow-lg text-sm"
+          class="bg-slate-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-slate-800 transition shadow-lg text-sm uppercase"
           >Lihat Project</a
         >
         <a
           href="#contact"
-          class="border border-slate-300 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition text-sm"
+          class="border border-slate-300 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition text-sm uppercase"
           >Hubungi Saya</a
         >
       </div>
@@ -45,7 +45,7 @@
           class="absolute inset-0 bg-blue-100 rounded-full scale-110 blur-3xl opacity-60"
         ></div>
         <img
-          src="{% static 'images/wahyu-profile.png' %}"
+          src="{% static 'images/wahyu-profile-main.png' %}"
           class="relative z-10 w-full h-full object-contain drop-shadow-2xl hover:scale-105 transition duration-500"
         />
       </div>
@@ -59,36 +59,88 @@
 >
   <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
     <div>
-      <h3 class="text-3xl font-bold mb-6 italic text-slate-800 text-pretty">
+      <h3 class="text-3xl font-bold mb-6 italic text-slate-800">
         Senang dengan Tantangan, Fokus pada Solusi
       </h3>
       <p class="text-slate-600 mb-6 leading-relaxed">
         Bagi saya, teknologi bukan sekadar baris kode. Saya belajar menyatukan
         berbagai disiplin ilmu—mulai dari infrastruktur jaringan hingga sistem
         IoT. Saat ini saya juga mendalami
-        <span class="font-bold text-slate-900">Artificial Intelligence</span>
+        <span
+          class="font-bold text-slate-900 underline decoration-blue-500 decoration-2"
+          >Artificial Intelligence</span
+        >
         untuk memperkuat integrasi sistem yang saya bangun.
       </p>
-      <div class="space-y-4">
+
+      <div class="grid grid-cols-1 gap-4 mt-10">
         <div
-          class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100"
+          class="group p-5 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300"
         >
-          <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
-          <p
-            class="text-sm font-bold text-slate-700 uppercase italic tracking-tight"
-          >
-            Problem Solver & Integrator
-          </p>
+          <div class="flex items-start gap-5">
+            <div
+              class="p-3 bg-white rounded-xl group-hover:bg-blue-600 transition-colors duration-300 shadow-sm text-blue-600 group-hover:text-white"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1h-3a1 1 0 01-1-1v-3a1 1 0 011-1h1a2 2 0 100-4h-1a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h4
+                class="font-bold text-slate-900 text-sm uppercase tracking-tight italic"
+              >
+                Problem Solver & Integrator
+              </h4>
+              <p class="text-[11px] text-slate-500 mt-1 leading-relaxed">
+                Menganalisis masalah kompleks dan menyatukan berbagai lapisan
+                teknologi menjadi ekosistem solid.
+              </p>
+            </div>
+          </div>
         </div>
         <div
-          class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100"
+          class="group p-5 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-green-200 transition-all duration-300"
         >
-          <span class="w-2 h-2 bg-green-500 rounded-full"></span>
-          <p
-            class="text-sm font-bold text-slate-700 uppercase italic tracking-tight"
-          >
-            Fast Learner & Tech Enthusiast
-          </p>
+          <div class="flex items-start gap-5">
+            <div
+              class="p-3 bg-white rounded-xl group-hover:bg-green-500 transition-colors duration-300 shadow-sm text-green-600 group-hover:text-white"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h4
+                class="font-bold text-slate-900 text-sm uppercase tracking-tight italic"
+              >
+                Fast Learner & Tech Enthusiast
+              </h4>
+              <p class="text-[11px] text-slate-500 mt-1 leading-relaxed">
+                Selalu haus teknologi baru, dari IoT hingga AI, dan
+                mengimplementasikannya dalam waktu singkat.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -97,7 +149,7 @@
       class="bg-slate-50 p-8 md:p-10 rounded-3xl border border-slate-100 shadow-inner"
     >
       <h4
-        class="text-[10px] font-bold mb-10 text-blue-600 uppercase tracking-[0.2em] text-center md:text-left"
+        class="text-[10px] font-bold mb-10 text-blue-600 uppercase tracking-[0.2em] text-center md:text-left italic"
       >
         Tech Stack & Ecosystem
       </h4>
@@ -105,108 +157,97 @@
         <div class="flex flex-col items-center group">
           <i
             class="devicon-cisco-plain text-4xl text-[#049CA4] transition-transform group-hover:scale-110"
-          ></i>
-          <span
-            class="text-[9px] mt-2 font-bold text-slate-500 uppercase tracking-tighter"
+          ></i
+          ><span class="text-[9px] mt-2 font-bold text-slate-500 uppercase"
             >Cisco</span
           >
         </div>
         <div class="flex flex-col items-center group">
           <i
             class="devicon-redhat-plain text-4xl text-[#EE0000] transition-transform group-hover:scale-110"
-          ></i>
-          <span
-            class="text-[9px] mt-2 font-bold text-slate-500 uppercase tracking-tighter"
+          ></i
+          ><span class="text-[9px] mt-2 font-bold text-slate-500 uppercase"
             >RedHat</span
           >
         </div>
         <div class="flex flex-col items-center group">
           <i
             class="devicon-python-plain text-4xl text-[#3776AB] transition-transform group-hover:scale-110"
-          ></i>
-          <span
-            class="text-[9px] mt-2 font-bold text-slate-500 uppercase tracking-tighter"
+          ></i
+          ><span class="text-[9px] mt-2 font-bold text-slate-500 uppercase"
             >Python</span
           >
         </div>
         <div class="flex flex-col items-center group">
           <i
             class="devicon-django-plain text-4xl text-[#092E20] transition-transform group-hover:scale-110"
-          ></i>
-          <span
-            class="text-[9px] mt-2 font-bold text-slate-500 uppercase tracking-tighter"
+          ></i
+          ><span class="text-[9px] mt-2 font-bold text-slate-500 uppercase"
             >Django</span
           >
         </div>
         <div class="flex flex-col items-center group">
           <i
             class="devicon-postgresql-plain text-4xl text-[#336791] transition-transform group-hover:scale-110"
-          ></i>
-          <span
-            class="text-[9px] mt-2 font-bold text-slate-500 uppercase tracking-tighter"
+          ></i
+          ><span class="text-[9px] mt-2 font-bold text-slate-500 uppercase"
             >Postgres</span
           >
         </div>
         <div class="flex flex-col items-center group">
           <i
             class="devicon-influxdb-plain text-4xl text-[#22ADF6] transition-transform group-hover:scale-110"
-          ></i>
-          <span
-            class="text-[9px] mt-2 font-bold text-slate-500 uppercase tracking-tighter text-center"
+          ></i
+          ><span
+            class="text-[9px] mt-2 font-bold text-slate-500 uppercase text-center"
             >InfluxDB</span
           >
         </div>
         <div class="flex flex-col items-center group">
           <i
             class="devicon-docker-plain text-4xl text-[#2496ED] transition-transform group-hover:scale-110"
-          ></i>
-          <span
-            class="text-[9px] mt-2 font-bold text-slate-500 uppercase tracking-tighter"
+          ></i
+          ><span class="text-[9px] mt-2 font-bold text-slate-500 uppercase"
             >Docker</span
           >
         </div>
         <div class="flex flex-col items-center group">
           <i
             class="devicon-vscode-plain text-4xl text-[#007ACC] transition-transform group-hover:scale-110"
-          ></i>
-          <span
-            class="text-[9px] mt-2 font-bold text-slate-500 uppercase tracking-tighter"
+          ></i
+          ><span class="text-[9px] mt-2 font-bold text-slate-500 uppercase"
             >VS Code</span
           >
         </div>
         <div class="flex flex-col items-center group">
           <i
             class="devicon-git-plain text-4xl text-[#F05032] transition-transform group-hover:scale-110"
-          ></i>
-          <span
-            class="text-[9px] mt-2 font-bold text-slate-500 uppercase tracking-tighter"
+          ></i
+          ><span class="text-[9px] mt-2 font-bold text-slate-500 uppercase"
             >Git</span
           >
         </div>
         <div class="flex flex-col items-center group">
           <i
             class="devicon-github-original text-4xl text-[#181717] transition-transform group-hover:scale-110"
-          ></i>
-          <span
-            class="text-[9px] mt-2 font-bold text-slate-500 uppercase tracking-tighter"
+          ></i
+          ><span class="text-[9px] mt-2 font-bold text-slate-500 uppercase"
             >GitHub</span
           >
         </div>
         <div class="flex flex-col items-center group">
           <i
             class="devicon-arduino-plain text-4xl text-[#00979D] transition-transform group-hover:scale-110"
-          ></i>
-          <span
-            class="text-[9px] mt-2 font-bold text-slate-500 uppercase tracking-tighter"
+          ></i
+          ><span class="text-[9px] mt-2 font-bold text-slate-500 uppercase"
             >Arduino</span
           >
         </div>
         <div class="flex flex-col items-center group">
           <i
             class="devicon-google-plain text-4xl text-[#4285F4] transition-transform group-hover:scale-110"
-          ></i>
-          <span
-            class="text-[9px] mt-2 font-bold text-slate-500 uppercase tracking-tighter"
+          ></i
+          ><span class="text-[9px] mt-2 font-bold text-slate-500 uppercase"
             >Colab</span
           >
         </div>
@@ -216,7 +257,7 @@
 </section>
 
 <section id="projects" class="py-24">
-  <h3 class="text-3xl font-bold mb-12 border-l-8 border-blue-600 pl-4">
+  <h3 class="text-3xl font-bold mb-12 border-l-8 border-blue-600 pl-4 italic">
     Featured Projects & Activities
   </h3>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -227,9 +268,15 @@
       <div class="w-full h-64 overflow-hidden bg-slate-100">
         {% if project.image %}
         <img
-          src="{{ project.image.url }}"
+          src="{% static project.image %}"
           class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
         />
+        {% else %}
+        <div
+          class="w-full h-full flex items-center justify-center text-slate-300"
+        >
+          No Image Available
+        </div>
         {% endif %}
       </div>
       <div class="p-8">
@@ -246,7 +293,7 @@
           href="{{ project.github_link }}"
           target="_blank"
           class="font-bold text-sm text-slate-900 hover:text-blue-600 inline-flex items-center gap-2"
-          >View Code →</a
+          >View Code <span>→</span></a
         >
         {% endif %}
       </div>
@@ -261,10 +308,12 @@
   >
     Let's Connect
   </h2>
-  <h3 class="text-4xl font-extrabold mb-12">Siap untuk Kolaborasi?</h3>
+  <h3 class="text-4xl font-extrabold mb-12 text-slate-900">
+    Siap untuk Kolaborasi?
+  </h3>
   <a
     href="mailto:wwahyutirta@gmail.com"
-    class="inline-flex items-center gap-4 px-10 py-5 bg-white border border-slate-200 rounded-3xl hover:border-blue-500 hover:shadow-2xl transition group"
+    class="inline-flex items-center gap-4 px-10 py-5 bg-white border border-slate-200 rounded-3xl hover:border-blue-500 hover:shadow-2xl transition group shadow-sm"
   >
     <div
       class="p-3 bg-blue-50 rounded-xl group-hover:bg-blue-600 transition-colors"
@@ -282,8 +331,10 @@
       </svg>
     </div>
     <div class="text-left">
-      <p class="text-[10px] text-slate-500 font-bold uppercase">Email Me</p>
-      <p class="font-bold text-lg text-slate-900 tracking-tight">
+      <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">
+        Email Me
+      </p>
+      <p class="font-bold text-lg text-slate-900 tracking-tight italic">
         wwahyutirta@gmail.com
       </p>
     </div>
