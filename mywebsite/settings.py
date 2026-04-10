@@ -1,5 +1,6 @@
 """
 Django settings for mywebsite project.
+Final Production Version for Railway
 """
 
 from pathlib import Path
@@ -13,14 +14,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-8y&h0k9on4^fua7)2a_jy_@8i%ufk8p2xvycqu2#jsk%lfw25u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# Set False kalau lo mau webnya bener-bener mode profesional (tapi True dulu buat cek error)
 DEBUG = True
 
-# PERBAIKAN DISINI: Harus pake tanda kutip
 ALLOWED_HOSTS = ['*'] 
 
-
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -28,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # My Apps
     'blog',
     'about',
     'contact',
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware', # WhiteNoise buat handle static di cloud
+    'whitenoise.middleware.WhiteNoiseMiddleware', # Handle static files di cloud
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -51,7 +51,7 @@ ROOT_URLCONF = 'mywebsite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')], # Pastikan path template aman
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -65,14 +65,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mywebsite.wsgi.application'
 
-
-# Database - Auto switch ke Postgres di Cloud, SQLite di Lokal
+# Database Setup
+# Pakai SQLite di lokal, otomatis pakai Postgres di Railway via DATABASE_URL
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# Ambil konfigurasi database dari environment variable Railway
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
 
@@ -84,26 +86,27 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-
 # Internationalization
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-
-# Static & Media Files
+# Static Files (CSS, JavaScript, Images)
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
-# Storage WhiteNoise agar loading static lebih kencang di Cloud
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# Gunakan storage ini agar deployment lebih stabil (Anti-Error saat collectstatic)
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
+# Media Files (Uploadan user)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Tambahin domain Railway lo ke daftar trusted origins
+# Keamanan Form Login (Wajib buat Railway)
 CSRF_TRUSTED_ORIGINS = [
     'https://mywebsite-production-ffce.up.railway.app',
 ]
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
