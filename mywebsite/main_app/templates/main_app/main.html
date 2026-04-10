@@ -1,0 +1,117 @@
+{% extends 'main_app/base.html' %}
+<script src="https://cdn.tailwindcss.com"></script>
+{% block title %}Home{% endblock %} {% block content %}
+<section class="py-20 border-b border-gray-100">
+  <div class="flex flex-col md:flex-row items-center justify-between gap-10">
+    <div class="md:w-2/3">
+      <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
+        Halo, Gue <span class="text-blue-600">Wahyu Tirta Wardana</span>
+      </h1>
+      <p class="text-xl text-gray-600 mb-6">
+        Mahasiswa Teknologi Rekayasa Internet di
+        <strong>Politeknik Negeri Lampung</strong>. Gue fokus di bidang Cyber
+        Security, IoT, dan Web Development.
+      </p>
+      <div class="flex gap-4">
+        <a
+          href="#contact"
+          class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+          >Hubungi Gue</a
+        >
+        <a
+          href="#experience"
+          class="border border-gray-300 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition"
+          >Lihat Pengalaman</a
+        >
+      </div>
+    </div>
+    <div class="md:w-1/3">
+      <div
+        class="w-64 h-64 bg-gray-200 rounded-2xl mx-auto overflow-hidden shadow-xl border-4 border-white"
+      >
+        <img
+          src="https://via.placeholder.com/300"
+          alt="Wahyu Tirta"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-12">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="p-6 bg-blue-50 rounded-xl border border-blue-100">
+      <h3
+        class="font-bold text-blue-800 uppercase text-sm tracking-widest mb-2"
+      >
+        Organisasi
+      </h3>
+      <p class="text-gray-700">Wakil Ketua Divisi Medinfo - Hima TRI</p>
+    </div>
+    <div class="p-6 bg-green-50 rounded-xl border border-green-100">
+      <h3
+        class="font-bold text-green-800 uppercase text-sm tracking-widest mb-2"
+      >
+        Akademik
+      </h3>
+      <p class="text-gray-700">Semester 4 - IPK (Masukkan Disini)</p>
+    </div>
+    <div class="p-6 bg-purple-50 rounded-xl border border-purple-100">
+      <h3
+        class="font-bold text-purple-800 uppercase text-sm tracking-widest mb-2"
+      >
+        Project Saat Ini
+      </h3>
+      <p class="text-gray-700">Ketua Tim Program Kreativitas Mahasiswa (PKM)</p>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="py-16">
+  <h2 class="text-3xl font-bold mb-10 text-center">Pengalaman & Prestasi</h2>
+  <div class="space-y-8 max-w-4xl mx-auto">
+    <div class="relative pl-8 border-l-2 border-blue-600">
+      <div
+        class="absolute -left-[9px] top-0 w-4 h-4 bg-blue-600 rounded-full"
+      ></div>
+      <span class="text-sm font-bold text-blue-600">Semester 3</span>
+      <h4 class="text-xl font-bold text-gray-900">
+        Pembicara & Penulis E-book "Cyber Hygiene"
+      </h4>
+      <p class="text-gray-600 mt-2">
+        Memaparkan materi keamanan siber di tingkat SMA yang kemudian
+        didokumentasikan menjadi sebuah E-book edukatif.
+      </p>
+    </div>
+
+    <div class="relative pl-8 border-l-2 border-blue-600">
+      <div
+        class="absolute -left-[9px] top-0 w-4 h-4 bg-blue-600 rounded-full"
+      ></div>
+      <span class="text-sm font-bold text-blue-600">Semester 3</span>
+      <h4 class="text-xl font-bold text-gray-900">
+        Kontributor Buku "Internet of Things"
+      </h4>
+      <p class="text-gray-600 mt-2">
+        Berkontribusi dalam penulisan buku IoT, khususnya pada Chapter "IoT
+        Untuk Kandang Ayam" — solusi teknologi untuk agrikultur.
+      </p>
+    </div>
+
+    <div class="relative pl-8 border-l-2 border-blue-600">
+      <div
+        class="absolute -left-[9px] top-0 w-4 h-4 bg-blue-600 rounded-full"
+      ></div>
+      <span class="text-sm font-bold text-blue-600">Semester 2</span>
+      <h4 class="text-xl font-bold text-gray-900">
+        Pemateri Berpikir Komputasi (Computational Thinking)
+      </h4>
+      <p class="text-gray-600 mt-2">
+        Menjadi pembicara tamu di SMA untuk memperkenalkan metode problem
+        solving melalui pola pikir komputasi.
+      </p>
+    </div>
+  </div>
+</section>
+{% endblock %}
