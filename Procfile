@@ -1,1 +1,1 @@
-web: gunicorn mywebsite.wsgi --bind 0.0.0.0:8888
+web: gunicorn mywebsite.wsgi
