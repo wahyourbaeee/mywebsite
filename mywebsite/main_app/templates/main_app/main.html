@@ -1,117 +1,186 @@
-{% extends 'main_app/base.html' %}
-<script src="https://cdn.tailwindcss.com"></script>
-{% block title %}Home{% endblock %} {% block content %}
-<section class="py-20 border-b border-gray-100">
-  <div class="flex flex-col md:flex-row items-center justify-between gap-10">
-    <div class="md:w-2/3">
-      <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
-        Halo, Gue <span class="text-blue-600">Wahyu Tirta Wardana</span>
-      </h1>
-      <p class="text-xl text-gray-600 mb-6">
-        Mahasiswa Teknologi Rekayasa Internet di
-        <strong>Politeknik Negeri Lampung</strong>. Gue fokus di bidang Cyber
-        Security, IoT, dan Web Development.
+{% extends 'main_app/base.html' %} {% block content %}
+
+<section id="home" class="py-20">
+  <div class="max-w-3xl">
+    <h2
+      class="text-blue-600 font-bold tracking-widest uppercase text-sm mb-4 italic"
+    >
+      Software & System Integrator
+    </h2>
+    <h1
+      class="text-5xl md:text-6xl font-extrabold text-slate-900 leading-tight mb-6"
+    >
+      Menyelesaikan Masalah Kompleks melalui
+      <span class="text-blue-600">Integrasi Teknologi.</span>
+    </h1>
+    <p class="text-xl text-slate-600 leading-relaxed mb-8">
+      Halo, saya Wahyu Tirta Wardana. Sebagai mahasiswa Teknologi Rekayasa
+      Internet, saya mendedikasikan waktu saya untuk mengeksplorasi bagaimana
+      IoT, Networking, dan Web Development dapat bekerja sama dalam sebuah
+      ekosistem yang efisien. Dengan fondasi Python & PostgreSQL, saya berfokus
+      membangun solusi digital yang berbasis data dan terukur.
+    </p>
+    <div class="flex gap-4">
+      <a
+        href="#projects"
+        class="bg-slate-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-slate-800 transition shadow-lg"
+        >Lihat Project</a
+      >
+      <a
+        href="#story"
+        class="border border-slate-300 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition"
+        >My Story</a
+      >
+    </div>
+  </div>
+</section>
+
+<section
+  id="story"
+  class="py-20 bg-slate-50 -mx-4 px-4 md:-mx-20 md:px-20 rounded-3xl"
+>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div>
+      <h3 class="text-3xl font-bold mb-6">
+        Senang dengan Tantangan, Fokus pada Solusi
+      </h3>
+      <p class="text-slate-600 mb-4 leading-relaxed">
+        Bagi saya, teknologi bukan sekadar baris kode. Selama 4 semester di
+        Politeknik Negeri Lampung, saya belajar menyatukan berbagai disiplin
+        ilmu—mulai dari merancang infrastruktur jaringan, membangun sistem IoT,
+        hingga melakukan analisis data.
       </p>
-      <div class="flex gap-4">
-        <a
-          href="#contact"
-          class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
-          >Hubungi Gue</a
+      <p class="text-slate-600 mb-6 leading-relaxed">
+        Saya percaya bahwa adaptabilitas adalah kunci. Itulah alasan saya saat
+        ini sedang mendalami Artificial Intelligence untuk melengkapi ekosistem
+        teknologi yang saya bangun.
+      </p>
+      <div class="grid grid-cols-2 gap-4">
+        <div
+          class="p-4 bg-white rounded-xl shadow-sm border-t-4 border-blue-500"
         >
-        <a
-          href="#experience"
-          class="border border-gray-300 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition"
-          >Lihat Pengalaman</a
+          <h4 class="font-bold text-slate-900">Problem Solver</h4>
+          <p class="text-xs text-slate-500 mt-1 text-pretty">
+            Menyukai tantangan logika dan optimasi sistem.
+          </p>
+        </div>
+        <div
+          class="p-4 bg-white rounded-xl shadow-sm border-t-4 border-green-500"
         >
+          <h4 class="font-bold text-slate-900">Fast Learner</h4>
+          <p class="text-xs text-slate-500 mt-1 text-pretty">
+            Adaptif terhadap teknologi baru (AI & Web-Dev).
+          </p>
+        </div>
       </div>
     </div>
-    <div class="md:w-1/3">
-      <div
-        class="w-64 h-64 bg-gray-200 rounded-2xl mx-auto overflow-hidden shadow-xl border-4 border-white"
-      >
-        <img
-          src="https://via.placeholder.com/300"
-          alt="Wahyu Tirta"
-          class="w-full h-full object-cover"
-        />
+
+    <div class="bg-white p-8 rounded-2xl shadow-xl border border-slate-100">
+      <h4 class="text-xl font-bold mb-6 text-blue-600">Technical Expertise</h4>
+      <div class="space-y-5">
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="text-sm font-semibold text-slate-700"
+              >Web Development (Django/Python)</span
+            >
+            <span class="text-sm font-semibold">85%</span>
+          </div>
+          <div class="w-full bg-slate-100 rounded-full h-2">
+            <div
+              class="bg-blue-600 h-2 rounded-full transition-all duration-1000"
+              style="width: 85%"
+            ></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="text-sm font-semibold text-slate-700"
+              >IoT System Design</span
+            >
+            <span class="text-sm font-semibold">90%</span>
+          </div>
+          <div class="w-full bg-slate-100 rounded-full h-2">
+            <div
+              class="bg-blue-600 h-2 rounded-full transition-all duration-1000"
+              style="width: 90%"
+            ></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="text-sm font-semibold text-slate-700"
+              >Networking & Data Analysis</span
+            >
+            <span class="text-sm font-semibold">80%</span>
+          </div>
+          <div class="w-full bg-slate-100 rounded-full h-2">
+            <div
+              class="bg-blue-600 h-2 rounded-full transition-all duration-1000"
+              style="width: 80%"
+            ></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="text-sm font-semibold text-slate-700"
+              >Artificial Intelligence (Learning)</span
+            >
+            <span class="text-sm font-semibold">50%</span>
+          </div>
+          <div class="w-full bg-slate-100 rounded-full h-2">
+            <div
+              class="bg-yellow-500 h-2 rounded-full transition-all duration-1000"
+              style="width: 50%"
+            ></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="py-12">
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <div class="p-6 bg-blue-50 rounded-xl border border-blue-100">
-      <h3
-        class="font-bold text-blue-800 uppercase text-sm tracking-widest mb-2"
+<section id="experience" class="py-24">
+  <h3 class="text-3xl font-bold mb-12 text-center text-slate-900">
+    Collaboration & Leadership
+  </h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div
+      class="p-8 bg-white border border-slate-200 rounded-2xl hover:border-blue-500 transition-all duration-300 group shadow-sm hover:shadow-md"
+    >
+      <span class="text-blue-600 font-bold text-xs uppercase tracking-widest"
+        >2026 - Present</span
       >
-        Organisasi
-      </h3>
-      <p class="text-gray-700">Wakil Ketua Divisi Medinfo - Hima TRI</p>
-    </div>
-    <div class="p-6 bg-green-50 rounded-xl border border-green-100">
-      <h3
-        class="font-bold text-green-800 uppercase text-sm tracking-widest mb-2"
+      <h4
+        class="text-xl font-bold mt-2 mb-4 group-hover:text-blue-600 transition-colors"
       >
-        Akademik
-      </h3>
-      <p class="text-gray-700">Semester 4 - IPK (Masukkan Disini)</p>
-    </div>
-    <div class="p-6 bg-purple-50 rounded-xl border border-purple-100">
-      <h3
-        class="font-bold text-purple-800 uppercase text-sm tracking-widest mb-2"
-      >
-        Project Saat Ini
-      </h3>
-      <p class="text-gray-700">Ketua Tim Program Kreativitas Mahasiswa (PKM)</p>
-    </div>
-  </div>
-</section>
-
-<section id="experience" class="py-16">
-  <h2 class="text-3xl font-bold mb-10 text-center">Pengalaman & Prestasi</h2>
-  <div class="space-y-8 max-w-4xl mx-auto">
-    <div class="relative pl-8 border-l-2 border-blue-600">
-      <div
-        class="absolute -left-[9px] top-0 w-4 h-4 bg-blue-600 rounded-full"
-      ></div>
-      <span class="text-sm font-bold text-blue-600">Semester 3</span>
-      <h4 class="text-xl font-bold text-gray-900">
-        Pembicara & Penulis E-book "Cyber Hygiene"
+        Ketua Tim Program Kreativitas Mahasiswa (PKM)
       </h4>
-      <p class="text-gray-600 mt-2">
-        Memaparkan materi keamanan siber di tingkat SMA yang kemudian
-        didokumentasikan menjadi sebuah E-book edukatif.
+      <p class="text-slate-600 text-sm leading-relaxed">
+        Mengorganisir tim dalam pengembangan inovasi teknologi, menyatukan
+        berbagai ide, dan memimpin eksekusi project untuk seleksi tingkat
+        nasional.
       </p>
     </div>
-
-    <div class="relative pl-8 border-l-2 border-blue-600">
-      <div
-        class="absolute -left-[9px] top-0 w-4 h-4 bg-blue-600 rounded-full"
-      ></div>
-      <span class="text-sm font-bold text-blue-600">Semester 3</span>
-      <h4 class="text-xl font-bold text-gray-900">
-        Kontributor Buku "Internet of Things"
+    <div
+      class="p-8 bg-white border border-slate-200 rounded-2xl hover:border-blue-500 transition-all duration-300 group shadow-sm hover:shadow-md"
+    >
+      <span class="text-blue-600 font-bold text-xs uppercase tracking-widest"
+        >2025 - Collaborative Project</span
+      >
+      <h4
+        class="text-xl font-bold mt-2 mb-4 group-hover:text-blue-600 transition-colors"
+      >
+        Penulis & Pemateri Teknologi
       </h4>
-      <p class="text-gray-600 mt-2">
-        Berkontribusi dalam penulisan buku IoT, khususnya pada Chapter "IoT
-        Untuk Kandang Ayam" — solusi teknologi untuk agrikultur.
-      </p>
-    </div>
-
-    <div class="relative pl-8 border-l-2 border-blue-600">
-      <div
-        class="absolute -left-[9px] top-0 w-4 h-4 bg-blue-600 rounded-full"
-      ></div>
-      <span class="text-sm font-bold text-blue-600">Semester 2</span>
-      <h4 class="text-xl font-bold text-gray-900">
-        Pemateri Berpikir Komputasi (Computational Thinking)
-      </h4>
-      <p class="text-gray-600 mt-2">
-        Menjadi pembicara tamu di SMA untuk memperkenalkan metode problem
-        solving melalui pola pikir komputasi.
+      <p class="text-slate-600 text-sm leading-relaxed">
+        Bersama tim, saya berkontribusi dalam penulisan buku "Internet of
+        Things" (Chapter: IoT Kandang ayam : monitoring suhu dan kelembapan
+        serta pemberian pakan otomatis berdasarkan waktu yang telah di tentukan)
+        dan aktif menjadi pembicara dalam topik Cyber Hygiene serta
+        Computational Thinking.
       </p>
     </div>
   </div>
 </section>
+
 {% endblock %}
