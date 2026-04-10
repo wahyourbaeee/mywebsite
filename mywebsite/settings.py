@@ -1,24 +1,15 @@
-"""
-Django settings for mywebsite project.
-FINAL GACOR VERSION - Anti Error Static Files
-"""
-
-from pathlib import Path
 import os
+from pathlib import Path
 import dj_database_url
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-8y&h0k9on4^fua7)2a_jy_@8i%ufk8p2xvycqu2#jsk%lfw25u'
 
-# Biarkan True dulu biar kita bisa liat errornya kalau masih ada
-DEBUG = True
+# Matikan DEBUG kalau sudah benar-benar fix
+DEBUG = True 
 
 ALLOWED_HOSTS = ['*']
 
-# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -26,16 +17,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog',
-    'about',
-    'contact',
     'main_app',
     'projects',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # Wajib di bawah SecurityMiddleware
+    'whitenoise.middleware.WhiteNoiseMiddleware', # Paling penting buat static
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -61,9 +49,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'mywebsite.wsgi.application'
-
-# Database
+# Database Setup
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -71,45 +57,20 @@ DATABASES = {
     }
 }
 
-# Auto-switch ke Postgres di Railway
+# Auto-config Database Railway
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
 
-# Password validation
-AUTH_PASSWORD_VALIDATORS = [
-    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
-    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
-    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
-    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
-]
-
-# Internationalization
-LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
-USE_I18N = True
-USE_TZ = True
-
-# --- KONFIGURASI STATIC FILES (INI BIANG KEROKNYA) ---
+# --- CONFIG STATIC & MEDIA ---
 STATIC_URL = '/static/'
-
-# Folder tempat lo naruh gambar di VS Code
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
-
-# Folder tempat Railway ngumpulin semua gambar (Jangan buat manual, biar sistem yang buat)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-# Storage WhiteNoise yang paling stabil
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+# Gunakan storage ini untuk WhiteNoise
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# Media Files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Keamanan
-CSRF_TRUSTED_ORIGINS = [
-    'https://mywebsite-production-ffce.up.railway.app',
-]
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CSRF_TRUSTED_ORIGINS = ['https://mywebsite-production-ffce.up.railway.app']
