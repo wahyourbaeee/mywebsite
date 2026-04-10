@@ -2,7 +2,7 @@
 
 <section id="home" class="py-20 md:py-32">
   <div
-    class="flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-16"
+    class="flex flex-col-reverse md:flex-row items-center justify-between gap-12"
   >
     <div class="md:w-3/5 text-center md:text-left">
       <h2
@@ -30,23 +30,21 @@
       <div class="flex flex-wrap justify-center md:justify-start gap-4">
         <a
           href="#projects"
-          class="bg-slate-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-slate-800 transition shadow-lg text-sm md:text-base"
+          class="bg-slate-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-slate-800 transition shadow-lg"
           >Lihat Project</a
         >
         <a
           href="#story"
-          class="border border-slate-300 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition text-sm md:text-base"
+          class="border border-slate-300 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
           >My Story</a
         >
       </div>
     </div>
-
     <div class="md:w-2/5 flex justify-center relative">
       <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
         <div
           class="absolute inset-0 bg-blue-100 rounded-full scale-110 blur-3xl opacity-60"
         ></div>
-
         <img
           src="{% static 'images/wahyu-profile.png' %}"
           alt="Wahyu Tirta Wardana"
@@ -62,51 +60,47 @@
   class="py-20 bg-white -mx-6 px-6 md:rounded-3xl border border-slate-100 shadow-sm"
 >
   <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-    <div class="text-pretty">
-      <h3 class="text-3xl font-bold mb-6 text-slate-900">
+    <div>
+      <h3 class="text-3xl font-bold mb-6">
         Senang dengan Tantangan, Fokus pada Solusi
       </h3>
-      <p class="text-slate-600 mb-4 leading-relaxed">
+      <p class="text-slate-600 mb-6 leading-relaxed">
         Bagi saya, teknologi bukan sekadar baris kode. Selama 4 semester, saya
         belajar menyatukan berbagai disiplin ilmu—mulai dari infrastruktur
         jaringan hingga sistem IoT. Saya sangat adaptif terhadap tantangan baru,
         termasuk saat ini mendalami
-        <span
-          class="font-bold text-slate-900 text-slate-900 underline decoration-blue-500 decoration-2"
-          >Artificial Intelligence</span
-        >.
+        <span class="font-bold text-slate-900">Artificial Intelligence</span>.
       </p>
-      <div class="grid grid-cols-2 gap-4 mt-8 text-pretty">
+      <div class="grid grid-cols-2 gap-4 mt-8">
         <div
           class="p-4 bg-slate-50 rounded-xl border-l-4 border-blue-500 shadow-sm"
         >
-          <h4 class="font-bold text-slate-900 text-sm italic">
-            Problem Solver
-          </h4>
-          <p class="text-[11px] text-slate-500 mt-1 leading-tight">
+          <h4 class="font-bold text-slate-900 text-sm">Problem Solver</h4>
+          <p class="text-[11px] text-slate-500 mt-1">
             Terbiasa menangani tantangan logika kompleks.
           </p>
         </div>
         <div
           class="p-4 bg-slate-50 rounded-xl border-l-4 border-green-500 shadow-sm"
         >
-          <h4 class="font-bold text-slate-900 text-sm italic">Fast Learner</h4>
-          <p class="text-[11px] text-slate-500 mt-1 leading-tight">
-            Cepat beradaptasi dengan teknologi baru (AI/Web).
+          <h4 class="font-bold text-slate-900 text-sm">Fast Learner</h4>
+          <p class="text-[11px] text-slate-500 mt-1">
+            Cepat beradaptasi dengan teknologi baru.
           </p>
         </div>
       </div>
     </div>
 
-    <div class="space-y-5 bg-slate-50 p-6 rounded-2xl border border-slate-100">
-      <h4 class="text-lg font-bold mb-4 text-blue-600">Technical Expertise</h4>
+    <div class="space-y-5 bg-slate-50 p-8 rounded-2xl border border-slate-100">
+      <h4
+        class="text-lg font-bold mb-4 text-blue-600 uppercase tracking-widest text-xs"
+      >
+        Technical Expertise
+      </h4>
 
       <div>
-        <div
-          class="flex justify-between mb-1 text-xs font-bold uppercase text-slate-500 tracking-tighter"
-        >
-          <span>Web Dev (Django/Python)</span>
-          <span>85%</span>
+        <div class="flex justify-between mb-1 text-xs font-bold text-slate-500">
+          <span>Web Dev (Django)</span><span>85%</span>
         </div>
         <div class="w-full bg-slate-200 rounded-full h-1.5">
           <div class="bg-blue-600 h-1.5 rounded-full" style="width: 85%"></div>
@@ -114,11 +108,8 @@
       </div>
 
       <div>
-        <div
-          class="flex justify-between mb-1 text-xs font-bold uppercase text-slate-500 tracking-tighter"
-        >
-          <span>IoT System Design</span>
-          <span>90%</span>
+        <div class="flex justify-between mb-1 text-xs font-bold text-slate-500">
+          <span>IoT Design</span><span>90%</span>
         </div>
         <div class="w-full bg-slate-200 rounded-full h-1.5">
           <div class="bg-blue-600 h-1.5 rounded-full" style="width: 90%"></div>
@@ -126,11 +117,8 @@
       </div>
 
       <div>
-        <div
-          class="flex justify-between mb-1 text-xs font-bold uppercase text-slate-500 tracking-tighter"
-        >
-          <span>Network & Data Analysis</span>
-          <span>80%</span>
+        <div class="flex justify-between mb-1 text-xs font-bold text-slate-500">
+          <span>Networking</span><span>80%</span>
         </div>
         <div class="w-full bg-slate-200 rounded-full h-1.5">
           <div class="bg-blue-600 h-1.5 rounded-full" style="width: 80%"></div>
@@ -138,11 +126,8 @@
       </div>
 
       <div>
-        <div
-          class="flex justify-between mb-1 text-xs font-bold uppercase text-slate-500 tracking-tighter"
-        >
-          <span>Artificial Intelligence (Learning)</span>
-          <span>50%</span>
+        <div class="flex justify-between mb-1 text-xs font-bold text-slate-500">
+          <span>AI (Learning)</span><span>50%</span>
         </div>
         <div class="w-full bg-slate-200 rounded-full h-1.5">
           <div
@@ -156,9 +141,7 @@
 </section>
 
 <section id="projects" class="py-24">
-  <h3
-    class="text-3xl font-bold mb-12 text-slate-900 border-l-8 border-blue-600 pl-4"
-  >
+  <h3 class="text-3xl font-bold mb-12 border-l-8 border-blue-600 pl-4">
     Featured Projects
   </h3>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -172,19 +155,11 @@
           src="{{ project.image.url }}"
           class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
         />
-        {% else %}
-        <div
-          class="w-full h-full flex items-center justify-center text-slate-400"
-        >
-          No Image
-        </div>
         {% endif %}
       </div>
       <div class="p-8">
         <div class="flex justify-between items-start mb-3">
-          <h4
-            class="text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition"
-          >
+          <h4 class="text-2xl font-bold group-hover:text-blue-600 transition">
             {{ project.title }}
           </h4>
           <span
@@ -192,17 +167,14 @@
             >{{ project.tech_stack }}</span
           >
         </div>
-        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
-          {{ project.description }}
-        </p>
+        <p class="text-slate-600 text-sm mb-6">{{ project.description }}</p>
         {% if project.github_link %}
         <a
           href="{{ project.github_link }}"
           target="_blank"
-          class="inline-flex items-center gap-2 font-bold text-sm text-slate-900 hover:text-blue-600 transition-all hover:gap-4"
+          class="font-bold text-sm text-slate-900 hover:text-blue-600 transition-all hover:gap-4 flex items-center gap-2"
+          >View Code <span>→</span></a
         >
-          View Code <span>→</span>
-        </a>
         {% endif %}
       </div>
     </div>
@@ -213,42 +185,45 @@
 <section id="experience" class="py-20 border-t border-slate-200">
   <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
     <div class="md:col-span-2 space-y-8">
-      <h3 class="text-2xl font-bold">Leadership & Collaborative Work</h3>
+      <h3 class="text-2xl font-bold text-slate-900">
+        Leadership & Collaborative Work
+      </h3>
       <div class="border-l-2 border-slate-200 pl-6 space-y-8">
         <div>
-          <span class="text-xs font-bold text-blue-600 uppercase"
+          <span
+            class="text-xs font-bold text-blue-600 uppercase tracking-widest"
             >PKM Leader</span
           >
           <h4 class="font-bold text-lg text-slate-900">
             Ketua Tim Program Kreativitas Mahasiswa
           </h4>
           <p class="text-slate-500 text-sm mt-1">
-            Mengorganisir tim dan menyatukan visi dalam pengembangan inovasi
-            teknologi nasional.
+            Mengorganisir tim dalam inovasi teknologi nasional.
           </p>
         </div>
         <div>
-          <span class="text-xs font-bold text-blue-600 uppercase"
+          <span
+            class="text-xs font-bold text-blue-600 uppercase tracking-widest"
             >Collaborative Author</span
           >
           <h4 class="font-bold text-lg text-slate-900">
             Penulis Buku & Pemateri Teknologi
           </h4>
           <p class="text-slate-500 text-sm mt-1">
-            Berkontribusi dalam buku "Internet of Things" dan aktif sebagai
-            pembicara Cyber Hygiene bersama tim.
+            Berkontribusi pada buku "Internet of Things" dan speaker Cyber
+            Hygiene.
           </p>
         </div>
       </div>
     </div>
     <div
-      class="bg-slate-900 text-white p-8 rounded-3xl flex flex-col justify-between shadow-2xl shadow-blue-900/20"
+      class="bg-slate-900 text-white p-8 rounded-3xl flex flex-col justify-between shadow-2xl"
     >
       <div>
-        <h4 class="text-xl font-bold mb-4 italic text-blue-400 underline">
+        <h4 class="text-xl font-bold italic text-blue-400 underline mb-4">
           Let's Connect
         </h4>
-        <p class="text-slate-400 text-sm leading-relaxed">
+        <p class="text-slate-400 text-sm">
           Terbuka untuk kolaborasi project, freelance, atau peluang magang.
         </p>
       </div>
@@ -256,7 +231,7 @@
         <a
           href="https://www.linkedin.com/in/wahyutirtawardana/"
           target="_blank"
-          class="p-3 bg-white/10 rounded-full hover:bg-blue-600 transition"
+          class="p-3 bg-white/10 rounded-full hover:bg-blue-600 transition shadow-sm"
         >
           <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24">
             <path
@@ -267,7 +242,7 @@
         <a
           href="https://github.com/wahyourbaeee"
           target="_blank"
-          class="p-3 bg-white/10 rounded-full hover:bg-white hover:text-black transition"
+          class="p-3 bg-white/10 rounded-full hover:bg-white hover:text-black transition shadow-sm"
         >
           <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
             <path
@@ -277,6 +252,41 @@
         </a>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="contact" class="py-24 border-t border-slate-100 text-center">
+  <h2 class="text-blue-600 font-bold uppercase text-xs tracking-widest mb-4">
+    Direct Contact
+  </h2>
+  <h3 class="text-4xl font-extrabold mb-12 text-slate-900">
+    Siap untuk Kolaborasi?
+  </h3>
+  <div class="inline-flex flex-col md:flex-row gap-6">
+    <a
+      href="mailto:wwahyutirta@gmail.com"
+      class="flex items-center gap-4 px-8 py-4 bg-white border border-slate-200 rounded-2xl hover:border-blue-500 hover:shadow-lg transition group"
+    >
+      <div
+        class="p-3 bg-blue-50 rounded-xl group-hover:bg-blue-600 transition-colors"
+      >
+        <svg
+          class="w-6 h-6 text-blue-600 group-hover:text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-width="2"
+            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+          ></path>
+        </svg>
+      </div>
+      <div class="text-left">
+        <p class="text-xs text-slate-500 font-bold uppercase">Email Me</p>
+        <p class="font-bold text-slate-900">wwahyutirta@gmail.com</p>
+      </div>
+    </a>
   </div>
 </section>
 
