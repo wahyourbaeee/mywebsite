@@ -6,6 +6,10 @@
     <title>Wahyu Tirta Wardana | Portofolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
@@ -25,15 +29,15 @@
         <span class="font-bold text-2xl tracking-tighter text-blue-600"
           >WTW.</span
         >
-        <div class="hidden md:flex space-x-8 font-medium text-sm">
+        <div
+          class="hidden md:flex space-x-8 font-medium text-sm text-slate-600"
+        >
           <a href="#home" class="hover:text-blue-600 transition">Home</a>
           <a href="#story" class="hover:text-blue-600 transition">Story</a>
           <a href="#projects" class="hover:text-blue-600 transition"
             >Projects</a
           >
-          <a href="#experience" class="hover:text-blue-600 transition"
-            >Experience</a
-          >
+          <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
         </div>
         <a
           href="#contact"
@@ -44,11 +48,13 @@
     </nav>
 
     <main class="max-w-5xl mx-auto px-6">
-      {% block content %} {% endblock %}
+      {% block content %}{% endblock %}
     </main>
 
     <footer class="bg-white border-t border-slate-200 py-12 mt-20">
-      <div class="max-w-5xl mx-auto px-6 text-center text-slate-500 text-sm">
+      <div
+        class="max-w-5xl mx-auto px-6 text-center text-slate-500 text-sm italic"
+      >
         © 2026 Wahyu Tirta Wardana. Built with Django & Tailwind CSS.
       </div>
     </footer>
