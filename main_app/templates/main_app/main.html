@@ -1,12 +1,125 @@
-<div class="w-full h-64 overflow-hidden bg-slate-100">
-  {% if project.image %}
-  <img
-    src="{{ project.image.url }}"
-    class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
-  />
-  {% else %}
-  <div class="w-full h-full flex items-center justify-center text-slate-300">
-    No Image Available
+{% extends 'main_app/base.html' %} {% load static %} {% block content %}
+
+<section id="home" class="py-20 md:py-32">
+  <div
+    class="flex flex-col-reverse md:flex-row items-center justify-between gap-12"
+  >
+    <div class="md:w-3/5 text-center md:text-left">
+      <h2
+        class="text-blue-600 font-bold tracking-widest uppercase text-xs md:text-sm mb-4 italic"
+      >
+        Software & System Integrator
+      </h2>
+      <h1
+        class="text-5xl md:text-6xl font-extrabold text-slate-900 leading-tight mb-6"
+      >
+        Menyelesaikan Masalah Kompleks melalui
+        <span class="text-blue-600">Integrasi Teknologi.</span>
+      </h1>
+      <p
+        class="text-lg md:text-xl text-slate-600 leading-relaxed mb-10 max-w-2xl mx-auto md:mx-0"
+      >
+        Halo, saya
+        <span class="font-bold text-slate-900">Wahyu Tirta Wardana</span>.
+        Mahasiswa Teknologi Rekayasa Internet yang berfokus pada ekosistem
+        <span class="font-semibold text-slate-900"
+          >IoT, Networking, dan Web Development</span
+        >.
+      </p>
+      <div class="flex flex-wrap justify-center md:justify-start gap-4">
+        <a
+          href="#projects"
+          class="bg-slate-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-slate-800 transition shadow-lg text-sm uppercase"
+          >Lihat Project</a
+        >
+        <a
+          href="#contact"
+          class="border border-slate-300 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition text-sm uppercase"
+          >Hubungi Saya</a
+        >
+      </div>
+    </div>
+    <div class="md:w-2/5 flex justify-center">
+      <div class="relative w-64 h-64 md:w-80 lg:w-96 lg:h-96">
+        <div
+          class="absolute inset-0 bg-blue-100 rounded-full scale-110 blur-3xl opacity-60"
+        ></div>
+        <img
+          src="{% static 'images/wahyu-profile-main.png' %}"
+          class="relative z-10 w-full h-full object-contain drop-shadow-2xl hover:scale-105 transition duration-500"
+        />
+      </div>
+    </div>
   </div>
-  {% endif %}
-</div>
+</section>
+
+<section
+  id="story"
+  class="py-20 bg-white -mx-6 px-6 md:rounded-3xl border border-slate-100 shadow-sm"
+>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div>
+      <h3 class="text-3xl font-bold mb-6 italic text-slate-800">
+        Senang dengan Tantangan, Fokus pada Solusi
+      </h3>
+      <p class="text-slate-600 mb-6 leading-relaxed">
+        Bagi saya, teknologi bukan sekadar baris kode. Saya belajar menyatukan
+        berbagai disiplin ilmu—mulai dari infrastruktur jaringan hingga sistem
+        IoT. Saat ini saya juga mendalami
+        <span
+          class="font-bold text-slate-900 underline decoration-blue-500 decoration-2"
+          >Artificial Intelligence</span
+        >
+        untuk memperkuat integrasi sistem yang saya bangun.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="py-24">
+  <h3 class="text-3xl font-bold mb-12 border-l-8 border-blue-600 pl-4 italic">
+    Featured Projects & Activities
+  </h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+    {% for project in projects %}
+    <div
+      class="group bg-white rounded-3xl border border-slate-200 overflow-hidden hover:shadow-2xl transition duration-500"
+    >
+      <div class="w-full h-64 overflow-hidden bg-slate-100">
+        {% if project.image %}
+        <img
+          src="{{ project.image.url }}"
+          class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+        />
+        {% else %}
+        <div
+          class="w-full h-full flex items-center justify-center text-slate-300"
+        >
+          No Image Available
+        </div>
+        {% endif %}
+      </div>
+      <div class="p-8">
+        <span
+          class="text-[10px] font-bold px-3 py-1 bg-blue-50 text-blue-600 rounded-full uppercase tracking-widest"
+          >{{ project.tech_stack }}</span
+        >
+        <h4 class="text-2xl font-bold mt-4 mb-2">{{ project.title }}</h4>
+        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+          {{ project.description }}
+        </p>
+        {% if project.github_link %}
+        <a
+          href="{{ project.github_link }}"
+          target="_blank"
+          class="font-bold text-sm text-slate-900 hover:text-blue-600 inline-flex items-center gap-2"
+          >View Code <span>→</span></a
+        >
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}
