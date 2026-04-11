@@ -1,84 +1,50 @@
 {% extends 'main_app/base.html' %} {% load static %} {% block content %}
-<section id="home" class="py-20 md:py-32">
-  <div
-    class="flex flex-col-reverse md:flex-row items-center justify-between gap-12"
-  >
-    <div class="md:w-3/5 text-center md:text-left">
-      <h2
-        class="text-blue-600 font-bold tracking-widest uppercase text-xs md:text-sm mb-4 italic"
-      >
-        Software & System Integrator
-      </h2>
-      <h1
-        class="text-5xl md:text-6xl font-extrabold text-slate-900 leading-tight mb-6"
-      >
+<section id="home" class="py-20">
+  <div class="container mx-auto flex flex-col md:flex-row items-center">
+    <div class="md:w-1/2">
+      <h1 class="text-5xl font-bold mb-4">
         Menyelesaikan Masalah Kompleks melalui
-        <span class="text-blue-600">Integrasi Teknologi.</span>
+        <span class="text-blue-600">Integrasi Teknologi</span>.
       </h1>
-      <p
-        class="text-lg md:text-xl text-slate-600 leading-relaxed mb-10 max-w-2xl mx-auto md:mx-0"
-      >
-        Halo, saya
-        <span class="font-bold text-slate-900">Wahyu Tirta Wardana</span>.
-        Mahasiswa Teknologi Rekayasa Internet.
+      <p class="text-lg text-gray-600 mb-8">
+        Halo, saya Wahyu Tirta Wardana. Mahasiswa Teknologi Rekayasa Internet...
       </p>
-      <div class="flex flex-wrap justify-center md:justify-start gap-4">
-        <a
-          href="#projects"
-          class="bg-slate-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-slate-800 transition shadow-lg text-sm uppercase"
-          >Lihat Project</a
-        >
-      </div>
     </div>
-    <div class="md:w-2/5 flex justify-center">
-      <div class="relative w-64 h-64 md:w-80 lg:w-96 lg:h-96">
-        <div
-          class="absolute inset-0 bg-blue-100 rounded-full scale-110 blur-3xl opacity-60"
-        ></div>
-        <img
-          src="{% static 'images/wahyu-profile-main.png' %}"
-          class="relative z-10 w-full h-full object-contain drop-shadow-2xl hover:scale-105 transition duration-500"
-        />
-      </div>
+    <div class="md:w-1/2 flex justify-center">
+      <img
+        src="{% static 'images/wahyu-profile.png' %}"
+        alt="Wahyu Profile"
+        class="w-80 h-80 object-cover rounded-2xl shadow-2xl"
+      />
     </div>
   </div>
 </section>
 
-<section id="projects" class="py-24">
-  <h3 class="text-3xl font-bold mb-12 border-l-8 border-blue-600 pl-4 italic">
-    Featured Projects & Activities
-  </h3>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-    {% for project in projects %}
-    <div
-      class="group bg-white rounded-3xl border border-slate-200 overflow-hidden hover:shadow-2xl transition duration-500"
-    >
-      <div class="w-full h-64 overflow-hidden bg-slate-100">
-        {% if project.image %}
-        <img
-          src="{{ project.image.url }}"
-          class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
-        />
-        {% else %}
-        <div
-          class="w-full h-full flex items-center justify-center text-slate-300"
-        >
-          No Image Available
+<section id="projects" class="py-24 bg-gray-50">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold mb-12 text-center">
+      Featured Projects & Activities
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      {% for project in projects %}
+      <div
+        class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow"
+      >
+        <div class="h-64 overflow-hidden">
+          <img
+            src="{% static project.image %}"
+            alt="{{ project.title }}"
+            class="w-full h-full object-cover"
+          />
         </div>
-        {% endif %}
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">{{ project.title }}</h3>
+          <p class="text-gray-600">{{ project.description }}</p>
+        </div>
       </div>
-      <div class="p-8">
-        <span
-          class="text-[10px] font-bold px-3 py-1 bg-blue-50 text-blue-600 rounded-full uppercase tracking-widest"
-          >{{ project.tech_stack }}</span
-        >
-        <h4 class="text-2xl font-bold mt-4 mb-2">{{ project.title }}</h4>
-        <p class="text-slate-600 text-sm leading-relaxed mb-6">
-          {{ project.description }}
-        </p>
-      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
 </section>
 {% endblock %}
