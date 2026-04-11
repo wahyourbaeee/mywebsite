@@ -4,7 +4,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wahyu Tirta Wardana | Portfolio</title>
+    <title>WTW. | Wahyu Tirta Wardana</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,700;0,800;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -12,16 +17,22 @@
       tailwind.config = {
         theme: {
           extend: {
-            colors: {
-              dark: "#1f2937",
-              primary: "#3b82f6",
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              jakarta: ["Plus Jakarta Sans", "sans-serif"],
             },
           },
         },
       };
     </script>
+
+    <style>
+      .font-jakarta {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+    </style>
   </head>
-  <body class="bg-gray-50 text-dark antialiased">
+  <body class="bg-white font-sans antialiased text-slate-900">
     {% block content %} {% endblock %}
   </body>
 </html>
