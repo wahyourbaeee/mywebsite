@@ -3,10 +3,9 @@ from pathlib import Path
 import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = 'django-insecure-8y&h0k9on4^fua7)2a_jy_@8i%ufk8p2xvycqu2#jsk%lfw25u'
+SECRET_KEY = 'django-insecure-wahyu-gacor-key-pake-ini-aja'
 
-# Matikan DEBUG kalau sudah benar-benar fix
-DEBUG = True 
+DEBUG = True # Set False kalau sudah benar-benar fix di Railway
 
 ALLOWED_HOSTS = ['*']
 
@@ -23,7 +22,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware', # Paling penting buat static
+    'whitenoise.middleware.WhiteNoiseMiddleware', # PENTING: Untuk static di Railway
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -49,24 +48,24 @@ TEMPLATES = [
     },
 ]
 
-# Database Setup
+WSGI_APPLICATION = 'mywebsite.wsgi.application'
+
+# Database: Pake SQLite di lokal, otomatis Postgres di Railway
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-# Auto-config Database Railway
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
 
-# --- CONFIG STATIC & MEDIA ---
+# --- KONFIGURASI STATIC & MEDIA (FIX GAMBAR PECAH) ---
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-# Gunakan storage ini untuk WhiteNoise
+# Storage WhiteNoise agar file statis terbaca di Railway
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
